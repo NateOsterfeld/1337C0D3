@@ -38,21 +38,7 @@ const TreeNode = require('./treeNode')
  * @return {number}
  */
 const minDiffInBST = root => {
-  const list = bstToList(root, [])
-  list.reduce((min, val, i) => {
-    return Math.min(list[i] - list[i-1])
-  }, Infinity)
 
-}
-
-const bstToList = (curr, list) => {
-  if (!curr)
-    return
-  
-  bstToList(curr.left, list)
-  list.push(curr.val)
-  bstToList(curr.right, list)
-  return list
 }
 
 const bst = new TreeNode(4)
@@ -60,5 +46,7 @@ bst.insert(2)
 bst.insert(6)
 bst.insert(1)
 bst.insert(4)
-console.log(JSON.stringify(bst, null, 2))
+// console.log(JSON.stringify(bst, null, 2))
 console.log(minDiffInBST(bst))
+
+module.exports = minDiffInBST
