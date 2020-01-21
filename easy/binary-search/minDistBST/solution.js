@@ -74,7 +74,33 @@ const inOrder0 = (curr, list) => {
 const minDiffInBST1 = root => {
     const list = inOrder(root, [])
     return list.reduce((min, val, i) => {
-        i = i === 0 ? 1 : i
+        i = !i ? 1 : 0
         return Math.min(min, list[i] - list[i-1])
     }, Infinity)
+}
+
+// iterative inorder solution
+const minDiffInBST2 = root => {
+	const stack = []
+	let curr = root,
+		prev = null,
+		min = Infinity
+
+	while (stack.length || curr) {
+		if (curr) {
+			stack.push(curr)
+			curr = curr.left
+		} else {
+			curr = stack.pop()
+
+			if (prev) {
+				min = Math.min(min, Math.abs(curr.val - prev.val))
+			}
+			prev = curr
+
+			curr = curr.right
+		}
+	}
+
+	return min
 }
