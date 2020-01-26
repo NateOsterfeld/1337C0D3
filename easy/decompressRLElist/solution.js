@@ -6,7 +6,7 @@ var decompressRLElist = function(nums) {
 	let freq = null
 	let res = []
 
-    for (let i = 0;i < nums.length;i++) {
+    for (let i = 0; i < nums.length; i++) {
         
         if (i % 2 === 0)
             freq = nums[i]
@@ -27,3 +27,24 @@ module.exports = decompressRLElist
 //              if it's the first, then we want to assign that num to be our 'frequency'
 //              if it's the second, then we want to use that as our 'value', which we will create an array out of using our frequency
 //              and because we want these to be flat when we return, we can push the array to the results array using the spread operator
+
+
+// alt solution
+/*
+var decompressRLElist = function(nums) {
+    var result = []
+    var next
+
+    for (var i = 0; i < nums.length; i += 2) {
+    	next = i + 1
+    	for (var j = 0; j < nums[i]; j++) {
+    		result.push(nums[next])
+        }
+    }
+
+    return result
+}
+*/
+
+// Explanation: increase i by 2 everytime so we always get the frequency for nums[i] and then use 'next = i + 1' for our value
+//              loop nums[i] as it is our frequency, each time pushing 'nums[next]' as it is our value
