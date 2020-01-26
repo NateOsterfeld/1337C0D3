@@ -6,10 +6,13 @@ var decompressRLElist = function(nums) {
 	let freq = null
 	let res = []
 
-	for (let i = 0; i < nums.length; i++) {
-		if (i % 2 === 0) freq = nums[i]
+    for (let i = 0;i < nums.length;i++) {
+        
+        if (i % 2 === 0)
+            freq = nums[i]
 
-		if (i % 2 === 1) res.push(...Array(freq).fill(nums[i]))
+        if (i % 2 === 1)
+            res.push(...Array(freq).fill(nums[i]))
 	}
 
 	return res
