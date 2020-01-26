@@ -28,4 +28,5 @@ var balancedStringSplit = function (s) {
     
 }
 
+console.log(balancedStringSplit('RLRRLLRLRL')) // 4
 module.exports = balancedStringSplit
