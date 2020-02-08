@@ -47,7 +47,6 @@ function increasingOrderBST(root) {
 		recurse(node.left)
 		res.push(node.val)
 
-		!res.includes(node.val) && res.push(node.val)
 		recurse(node.right)
 	}
 	recurse(root)
@@ -73,4 +72,4 @@ n.right.right = new Node(8)
 n.right.right.left = new Node(7)
 n.right.right.right = new Node(9)
 
-increasingOrderBST(n)
+console.log(JSON.stringify(increasingOrderBST(n), null, 4))
