@@ -46,14 +46,14 @@ function increasingOrderBST(root) {
 
 		recurse(node.left)
 		res.push(node.val)
-
 		recurse(node.right)
 	}
 	recurse(root)
 
 	const resTree = new Node(res[0])
 	function tree(node) {
-		if (res[i] === undefined) return
+    if (res[i] === undefined) return
+    
 		node.right = new Node(res[i])
 		tree(node.right, ++i)
 	}
