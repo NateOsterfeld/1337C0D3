@@ -41,6 +41,7 @@ function Node(val) {
 function increasingOrderBST(root) {
 	const res = []
 
+  // in-order traverse to convert BST to sorted array
 	function recurse(node) {
 		if (!node) return
 
@@ -50,6 +51,7 @@ function increasingOrderBST(root) {
 	}
 	recurse(root)
 
+  // convert sorted array to "increasing order BST"
 	const resTree = new Node(res[0])
 	function tree(node) {
     if (res[i] === undefined) return
