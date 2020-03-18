@@ -57,3 +57,22 @@ var invertTree = function(root) {
 
 	return root
 }
+
+// condensed solution
+function invertTree(root) {
+	if (root == null) return root
+
+	let left = invertTree(root.left)
+	root.left = invertTree(root.right)
+	root.right = left
+
+	return root
+}
+
+// linfongi's solution
+function invertTree(root) {
+    if (root) {
+        [root.left, root.right] = [invertTree(root.right), invertTree(root.left)];
+    }
+    return root;
+}
