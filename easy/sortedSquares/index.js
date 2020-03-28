@@ -15,5 +15,9 @@ Note:
     A is sorted in non-decreasing order.
 */
 
+/**
+ * @param {number[]} A
+ * @return {number[]}
+ */
 function sortedSquares(A) {}
 

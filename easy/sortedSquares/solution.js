@@ -15,6 +15,10 @@ Note:
     A is sorted in non-decreasing order.
 */
 
+/**
+ * @param {number[]} A
+ * @return {number[]}
+ */
 function sortedSquares(A) {
     let l = 0, r = A.length - 1, res = [];
 
@@ -26,6 +30,10 @@ function sortedSquares(A) {
     return res
 }
 
+/**
+ * @param {number[]} A
+ * @return {number[]}
+ */
 var sortedSquares = function(A) {
     let l = 0; let r = A.length - 1;
     let res = []
