@@ -22,3 +22,6 @@ Example:
 var isHappy = function(n) {
     
 };
+
+isHappy(19) // true
+isHappy(25) // false
